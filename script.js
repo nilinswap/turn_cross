@@ -175,6 +175,9 @@ function rotate_left(){
     /* Move the cars and lines */
     anim_id = requestAnimationFrame(repeat);
 
+    gap =  parseInt(getComputedStyle(document.getElementById('cross')).width)/1.41;
+    //console.log(gap);
+    //alert(gap);
     function repeat() {
         /*if (collision(car, car_1) || collision(car, car_2) || collision(car, car_3)) {
             stop_the_game();
