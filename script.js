@@ -1,4 +1,5 @@
 /* Swapnil Sharma*/
+var cross_elem = document.getElementById("cross");
 $(function() {
 
     var anim_id;
@@ -6,9 +7,13 @@ $(function() {
     //saving dom objects to variables
     var container = $('#container');
     var car = $('#car');
-    var car_1 = $('#car_1');
+
+        var car_1 = $('#car_1');
     var car_2 = $('#car_2');
     var car_3 = $('#car_3');
+    var bar_1 = $('#bar_1');
+    var bar_2 = $('#bar_2');
+    var bar_3 = $('#bar_3');
     var line_1 = $('#line_1');
     var line_2 = $('#line_2');
     var line_3 = $('#line_3');
@@ -16,6 +21,8 @@ $(function() {
     var restart_btn = $('#restart');
     var score = $('#score');
     var left_bar = $('#left_bar');
+    var top_bar = $('#bar_1');
+    var cross_elem = document.getElementById("cross");
     //saving some initial setup
     var container_left = parseInt(container.css('left'));
     var container_width = parseInt(container.width());
@@ -175,7 +182,8 @@ function rotate_left(){
     /* Move the cars and lines */
     anim_id = requestAnimationFrame(repeat);
 
-    min_gap =  parseInt(getComputedStyle(document.getElementById('cross')).width)/1.41;
+    min_gap =  parseInt(getComputedStyle(document.getElementById('cross')).width)/1.41 + 10;
+    max_gap = parseInt(getComputedStyle(document.getElementById('cross')).width);
     //console.log(gap);
     //alert(gap);
     function repeat() {
@@ -198,7 +206,20 @@ function rotate_left(){
         car_down(car_2);
         car_down(car_3);
 
-        left_bar_down(left_bar);
+        //alert(left_bar);
+        //alert(cross_elem);
+        var p = false;
+        /*if( left_bar && cross_elem){ 
+            p = overlap(left_bar, cross_elem );
+            if(p){
+                alert("collided");
+            }
+        }*/
+    
+
+        top_bar_down(bar_1);
+        top_bar_down(bar_2);
+        top_bar_down(bar_3);
         anim_id = requestAnimationFrame(repeat);
     }
 
@@ -211,15 +232,34 @@ function rotate_left(){
         }
         car.css('top', car_current_top + speed);
     }
-    function left_bar_down(left_bar) {
-        var left_bar_current_top = parseInt(left_bar.css('top'));
-        if (left_bar_current_top > container_height) {
-            left_bar_current_top = -200;
-            //var left_bar_left = parseInt(Math.random() * (container_width - car_width));
+    function top_bar_down(top_bar) {
+        //console.log("here");
+        var top_bar_current_top = parseInt(top_bar.css('top'));
+        //console.log( top_bar_current_top );
+
+        if (top_bar_current_top > container_height) {
+            top_bar_current_top = -200;
+
+
+            //randomize bar divs
+            randomize();
             //left_bar.css('left', left_bar_left);
         }
-        left_bar.css('top', left_bar_current_top + speed);
+        top_bar.css('top', top_bar_current_top + speed);
+        
     }
+
+    function bar_down(top_bar) {
+        //console.log("here");
+        var top_bar_current_top = parseInt(top_bar.css('top'));
+        //console.log( top_bar_current_top );
+
+        
+        top_bar.css('top', top_bar_current_top + speed);
+        
+    }
+    
+
 
     function line_down(line) {
         var line_current_top = parseInt(line.css('top'));
@@ -232,7 +272,44 @@ function rotate_left(){
     restart_btn.click(function() {
         location.reload();
     });
+    function randomize(){
+        
+        var array_type = [];
+        var array_gap = [];
+        for( var i = 0; i < 3; i++){
+            if( Math.random() > 0.5){
+                array_type.push(1);
+            }
+            else{
+                array_type.push(0);
+                
+            }
+            array_gap.push(Math.round(min_gap + (max_gap - min_gap)*Math.random()));
+            //console.log(array_gap[i].toString()+"px");
 
+        }
+        
+        for( var i = 0; i < 3; i++){
+            st = "bar_"+(i+1).toString();
+            if( array_type[i]){
+                
+                document.getElementById(st).classList.toggle('r_bar');
+                var p = document.getElementById(st);
+                p.style.marginBottom = array_gap[i].toString()+"px";
+                //p.css('top', array_gap[0]);
+            }
+            else{
+                document.getElementById(st).classList.toggle('l_bar');
+                var p = document.getElementById(st);
+                p.style.marginBottom = array_gap[i].toString()+"px";
+                //p.style.margin = array_gap[0].toString()+"px";
+                //p.css('top', array_gap[0]);
+            }
+        }
+
+        
+        //console.log(array_type);
+    }
     function stop_the_game() {
         game_over = true;
         cancelAnimationFrame(anim_id);
