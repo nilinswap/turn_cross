@@ -15,21 +15,20 @@ body {
     background-color: #292929;
     overflow: hidden;
 }
-.line{
-    position: absolute;
-    height: 150px;
-    width: 4%;
-    margin-left: 48%;
+.l_bar{
+    position: relative;
+    height: 4%;
+    width: 20%;
+    margin-left: 0;
     background-color: rgba(255,255,255,0.5);
 }
-#line_1{
-    top: -150px;
-}
-#line_2{
-    top: 150px;
-}
-#line_3{
-    top: 450px;
+
+.r_bar{
+    position: relative;
+    height: 4%;
+    width: 20%;
+    margin-left: 80%;
+    background-color: rgba(255,255,255,0.5);
 }
 .car{
     position: absolute;
@@ -43,6 +42,68 @@ body {
     left: 60%;
     background-color: #ffdf5a;
 }
+
+#car_1{
+    top: -100px;
+    left: 60%;
+    background-color: #26c5ff;
+}
+#car_2{
+    top: -200px;
+    left: 40%;
+    background-color: #26c5ff;
+}
+#car_3{
+    top: -350px;
+    left: 50%;
+    background-color: #26c5ff;
+}
+#restart_div {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #292929;
+    color: white;
+    font-family: sans-serif;
+    font-size: 40px;
+    text-align: center;
+    display: none;
+}
+
+#restart {
+    border: none;
+    padding: 25px;
+    color: white;
+    background-color: #8a64ff;
+    font-size: 30px;
+    margin-top: 30%;
+}
+.small_text{
+    font-size: 15px;
+}
+#score_div{
+    position: absolute;
+    margin-top: 20%;
+    margin-left: 10%;
+    font-size: 35px;
+    background-color: white;
+    color: #454545;
+    padding: 10px;
+    box-shadow: 4px 4px 0px 1px #808080;
+}
+#help{
+    text-align: center;
+}
+#donate{
+    position: absolute;
+    right: 10px;
+    top: 25px;
+    background: rgba(255,255,255,0.8);
+    padding: 12px;
+}
+
+
+/*
 .f_glass{
     position: absolute;
     height: 20%;
@@ -115,61 +176,20 @@ body {
     left: 100%;
     border-radius: 0px 5px 5px 0px;
 }
-#car_1{
-    top: -100px;
-    left: 60%;
-    background-color: #26c5ff;
-}
-#car_2{
-    top: -200px;
-    left: 40%;
-    background-color: #26c5ff;
-}
-#car_3{
-    top: -350px;
-    left: 50%;
-    background-color: #26c5ff;
-}
-#restart_div {
+.line{
     position: absolute;
-    height: 100%;
-    width: 100%;
-    background-color: #292929;
-    color: white;
-    font-family: sans-serif;
-    font-size: 40px;
-    text-align: center;
-    display: none;
+    height: 150px;
+    width: 4%;
+    margin-left: 48%;
+    background-color: rgba(255,255,255,0.5);
 }
-
-#restart {
-    border: none;
-    padding: 25px;
-    color: white;
-    background-color: #8a64ff;
-    font-size: 30px;
-    margin-top: 30%;
+#line_1{
+    top: -150px;
 }
-.small_text{
-    font-size: 15px;
+#line_2{
+    top: 150px;
 }
-#score_div{
-    position: absolute;
-    margin-top: 20%;
-    margin-left: 10%;
-    font-size: 35px;
-    background-color: white;
-    color: #454545;
-    padding: 10px;
-    box-shadow: 4px 4px 0px 1px #808080;
+#line_3{
+    top: 450px;
 }
-#help{
-	text-align: center;
-}
-#donate{
-    position: absolute;
-    right: 10px;
-    top: 25px;
-    background: rgba(255,255,255,0.8);
-    padding: 12px;
-}
+*/
