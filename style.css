@@ -79,7 +79,33 @@ body {
     bottom: 30%;
     left: 45%;
     background-color: #ffdf5a;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
+
+#clicker {
+    width: 100px;
+    height: 100px;
+    background-color: Green;
+}
+
+#rotating {
+    width: 100px;
+    height: 100px;
+    background-color: Red;
+    margin-top: 50px;
+
+}
+
+.rotated {
+    transform:rotate(25deg);
+    -webkit-transform:rotate(25deg);
+    -moz-transform:rotate(25deg);
+    -o-transform:rotate(25deg);
+}
+
 #car{
     bottom: 8%;
     left: 60%;

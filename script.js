@@ -186,6 +186,13 @@ $(function() {
 
 });
 
+$(document).ready(function() {
+    $('#clicker').click(function() {
+        $('#cross').toggleClass('rotated');
+    });
+});
+
+
 function rotate(){
     var degrees = 0;
     var looper;
