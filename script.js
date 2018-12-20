@@ -21,7 +21,7 @@ $(function() {
     var restart_btn = $('#restart');
     var score = $('#score');
     var left_bar = $('#left_bar');
-    var top_bar = $('#bar_1');
+    //var top_bar = $('#bar_1');
     var cross_elem = document.getElementById("cross");
     //saving some initial setup
     var container_left = parseInt(container.css('left'));
@@ -182,8 +182,8 @@ function rotate_left(){
     /* Move the cars and lines */
     anim_id = requestAnimationFrame(repeat);
 
-    min_gap =  parseInt(getComputedStyle(document.getElementById('cross')).width)/1.41 + 10;
-    max_gap = parseInt(getComputedStyle(document.getElementById('cross')).width);
+    var min_gap =  parseInt(getComputedStyle(document.getElementById('cross')).width)/1.41 + 30;
+    var max_gap = parseInt(getComputedStyle(document.getElementById('cross')).width) + 30;
     //console.log(gap);
     //alert(gap);
     function repeat() {
@@ -197,7 +197,7 @@ function rotate_left(){
         if (score_counter % 20 == 0) {
             score.text(parseInt(score.text()) + 1);
         }
-        if (score_counter % 500 == 0) {
+        if (score_counter % 1000 == 0) {
             speed++;
             line_speed++;
         }
