@@ -124,9 +124,6 @@ $(function() {
         car_down(car_2);
         car_down(car_3);
 
-        line_down(line_1);
-        line_down(line_2);
-        line_down(line_3);
 
         anim_id = requestAnimationFrame(repeat);
     }
@@ -188,3 +185,26 @@ $(function() {
 
 
 });
+
+function rotate(){
+    var degrees = 0;
+    var looper;
+    elem = $('#left_bar');
+    if(navigator.userAgent.match("Chrome")){
+        elem.style.WebkitTransform = "rotate("+degrees+"deg)";
+    } else if(navigator.userAgent.match("Firefox")){
+        elem.style.MozTransform = "rotate("+degrees+"deg)";
+    } else if(navigator.userAgent.match("MSIE")){
+        elem.style.msTransform = "rotate("+degrees+"deg)";
+    } else if(navigator.userAgent.match("Opera")){
+        elem.style.OTransform = "rotate("+degrees+"deg)";
+    } else {
+        elem.style.transform = "rotate("+degrees+"deg)";
+    }
+    looper = setTimeout('rotateAnimation(\''+el+'\','+speed+')',speed);
+    degrees++;
+    if(degrees > 359){
+        degrees = 1;
+    }
+    document.getElementById("status").innerHTML = "rotate("+degrees+"deg)";
+}
