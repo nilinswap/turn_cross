@@ -15,7 +15,7 @@ $(function() {
     var restart_div = $('#restart_div');
     var restart_btn = $('#restart');
     var score = $('#score');
-
+    var left_bar = $('#left_bar');
     //saving some initial setup
     var container_left = parseInt(container.css('left'));
     var container_width = parseInt(container.width());
@@ -176,11 +176,11 @@ function rotate_left(){
     anim_id = requestAnimationFrame(repeat);
 
     function repeat() {
-        if (collision(car, car_1) || collision(car, car_2) || collision(car, car_3)) {
+        /*if (collision(car, car_1) || collision(car, car_2) || collision(car, car_3)) {
             stop_the_game();
             return;
         }
-
+        */
         score_counter++;
 
         if (score_counter % 20 == 0) {
@@ -195,7 +195,7 @@ function rotate_left(){
         car_down(car_2);
         car_down(car_3);
 
-
+        left_bar_down(left_bar);
         anim_id = requestAnimationFrame(repeat);
     }
 
@@ -207,6 +207,15 @@ function rotate_left(){
             car.css('left', car_left);
         }
         car.css('top', car_current_top + speed);
+    }
+    function left_bar_down(left_bar) {
+        var left_bar_current_top = parseInt(left_bar.css('top'));
+        if (left_bar_current_top > container_height) {
+            left_bar_current_top = -200;
+            //var left_bar_left = parseInt(Math.random() * (container_width - car_width));
+            //left_bar.css('left', left_bar_left);
+        }
+        left_bar.css('top', left_bar_current_top + speed);
     }
 
     function line_down(line) {
