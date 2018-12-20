@@ -79,10 +79,10 @@ body {
     bottom: 30%;
     left: 45%;
     background-color: #ffdf5a;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.0s linear;
+    -moz-transition: all 0.0s linear;
+    -o-transition: all 0.0s linear;
+    transition: all 0.0s linear;
 }
 
 #clicker {
