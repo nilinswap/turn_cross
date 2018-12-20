@@ -182,8 +182,8 @@ function rotate_left(){
     /* Move the cars and lines */
     anim_id = requestAnimationFrame(repeat);
 
-    var min_gap =  parseInt(getComputedStyle(document.getElementById('cross')).width)/1.41 + 30;
-    var max_gap = parseInt(getComputedStyle(document.getElementById('cross')).width) + 30;
+    var min_gap =  parseInt(getComputedStyle(document.getElementById('cross')).width)/1.41 + 50;
+    var max_gap = parseInt(getComputedStyle(document.getElementById('cross')).width) + 50;
     //console.log(gap);
     //alert(gap);
     function repeat() {
