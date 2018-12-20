@@ -73,6 +73,29 @@ $(function() {
         }
     });
 
+var current_degree = 0;
+function rotate(){
+    el = "cross";
+    var degree_speed = 2;
+    current_degree+=degree_speed;
+    
+
+    var looper;
+    elem = document.getElementById(el);
+    if(navigator.userAgent.match("Chrome")){
+        elem.style.WebkitTransform = "rotate("+current_degree+"deg)";
+    } else if(navigator.userAgent.match("Firefox")){
+        elem.style.MozTransform = "rotate("+current_degree+"deg)";
+    } else if(navigator.userAgent.match("MSIE")){
+        elem.style.msTransform = "rotate("+current_degree+"deg)";
+    } else if(navigator.userAgent.match("Opera")){
+        elem.style.OTransform = "rotate("+current_degree+"deg)";
+    } else {
+        elem.style.transform = "rotate("+current_degree+"deg)";
+    }
+    
+    //document.getElementById("status").innerHTML = "rotate("+degrees+"deg)";
+}
     function left() {
         if (game_over === false && parseInt(car.css('left')) > 0) {
             car.css('left', parseInt(car.css('left')) - 5);
@@ -81,8 +104,9 @@ $(function() {
     }
 
     function right() {
-        if (game_over === false && parseInt(car.css('left')) < container_width - car_width) {
-            car.css('left', parseInt(car.css('left')) + 5);
+        if (game_over === false){ //&& parseInt(car.css('left')) < container_width - car_width) {
+            //car.css('left', parseInt(car.css('left')) + 5);
+            rotate();
             move_right = requestAnimationFrame(right);
         }
     }
@@ -193,25 +217,3 @@ $(document).ready(function() {
 });
 
 
-function rotate(){
-    var degrees = 0;
-    var looper;
-    elem = $('#left_bar');
-    if(navigator.userAgent.match("Chrome")){
-        elem.style.WebkitTransform = "rotate("+degrees+"deg)";
-    } else if(navigator.userAgent.match("Firefox")){
-        elem.style.MozTransform = "rotate("+degrees+"deg)";
-    } else if(navigator.userAgent.match("MSIE")){
-        elem.style.msTransform = "rotate("+degrees+"deg)";
-    } else if(navigator.userAgent.match("Opera")){
-        elem.style.OTransform = "rotate("+degrees+"deg)";
-    } else {
-        elem.style.transform = "rotate("+degrees+"deg)";
-    }
-    looper = setTimeout('rotateAnimation(\''+el+'\','+speed+')',speed);
-    degrees++;
-    if(degrees > 359){
-        degrees = 1;
-    }
-    document.getElementById("status").innerHTML = "rotate("+degrees+"deg)";
-}
