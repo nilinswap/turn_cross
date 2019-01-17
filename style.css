@@ -2,7 +2,7 @@ body {
     height: 100%;
     width: 100%;
     margin: 0;
-    background-color: #45d678;
+    background-color: rgba(255,255,255,0.3);
     font-family: sans-serif;
 }
 
@@ -20,7 +20,7 @@ body {
     height: 4%;
     width: 20%;
     margin-left: 0;
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgba(255,255,255,0.7);
 }
 
 .r_bar{
@@ -28,6 +28,13 @@ body {
     height: 4%;
     width: 20%;
     margin-left: 80%;
+    background-color: rgba(255,255,255,0.5);
+}
+.rr_bar{
+    position: relative;
+    height: 4%;
+    width: 20%;
+    margin-left: 50%;
     background-color: rgba(255,255,255,0.5);
 }
 
@@ -63,13 +70,14 @@ body {
     left: 100%;
     background-color: green
 }
+/*
 .car{
     position: absolute;
     height: 60px;
     width: 40px;
     border-radius: 5px;
     box-shadow: 0px 1px 8px 0px black;
-}
+}*/
 .cross{
     position: absolute;
     height: 50px;
@@ -78,18 +86,14 @@ body {
 #cross{
     bottom: 30%;
     left: 45%;
-    background-color: #ffdf5a;
+    background-color: green;
     -webkit-transition: all 0.0s linear;
     -moz-transition: all 0.0s linear;
     -o-transition: all 0.0s linear;
     transition: all 0.0s linear;
 }
 
-#clicker {
-    width: 100px;
-    height: 100px;
-    background-color: Green;
-}
+
 
 #rotating {
     width: 100px;
@@ -105,7 +109,7 @@ body {
     -moz-transform:rotate(25deg);
     -o-transform:rotate(25deg);
 }
-
+/*
 #car{
     bottom: 8%;
     left: 60%;
@@ -126,7 +130,7 @@ body {
     top: -350px;
     left: 50%;
     background-color: #26c5ff;
-}
+}*/
 #restart_div {
     position: absolute;
     height: 100%;
