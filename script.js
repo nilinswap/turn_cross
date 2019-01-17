@@ -8,7 +8,7 @@ $(function() {
     var container = $('#container');
     var car = $('#car');
 
-    var car_1 = $('#car_1');
+        var car_1 = $('#car_1');
     var car_2 = $('#car_2');
     var car_3 = $('#car_3');
     var bar_1 = $('#bar_1');
@@ -21,10 +21,6 @@ $(function() {
     var restart_btn = $('#restart');
     var score = $('#score');
     var left_bar = $('#left_bar');
-    var l = $('l');
-    var r = $('r');
-    var t = $('t');
-    var b = $('b');
     //var top_bar = $('#bar_1');
     var cross_elem = document.getElementById("cross");
     //saving some initial setup
@@ -191,14 +187,11 @@ function rotate_left(){
     //console.log(gap);
     //alert(gap);
     function repeat() {
-        /*if (collision(l, bar_1) || collision(l, bar_2) || collision(l, bar_3) ||
-            collision(r, bar_1) || collision(r, bar_2) || collision(r, bar_3) ||
-            collision(t, bar_1) || collision(t, bar_2) || collision(t, bar_3) ||
-            collision(b, bar_1) || collision(b, bar_2) || collision(b, bar_3)) {
+        /*if (collision(car, car_1) || collision(car, car_2) || collision(car, car_3)) {
             stop_the_game();
             return;
-        }*/
-        
+        }
+        */
         score_counter++;
 
         if (score_counter % 20 == 0) {
